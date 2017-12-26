@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry:{
-        index:['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true','./src/index.js']
-    },
+    entry:[
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
+        './src/index.js'
+    ],
     output:{
         filename:'bundle.js',
         path:path.resolve(__dirname, 'dist'),

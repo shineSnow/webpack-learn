@@ -1,6 +1,6 @@
 
 export const say_hello = () => {
 
-    document.getElementById('root').innerHTML = '345345     5sdfsd2222 sdfsd1  asdfsasdfasd  sdfasdfasd '
+    document.getElementById('root').innerHTML = 'abcd 有点意思  asdfsasdfasd  sdfasdfasd '
     
 }
