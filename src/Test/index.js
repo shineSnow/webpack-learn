@@ -1,5 +1,6 @@
 import {cube} from '../math'
-
+import './style.css'
+import '../moment'
 
 export const say_hello = () => {
     let html = `
