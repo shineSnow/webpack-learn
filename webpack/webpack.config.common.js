@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry:{
@@ -13,7 +12,7 @@ module.exports = {
         vendor:['moment']
     },
     output:{
-        filename:'[name].bundle.js',
+        filename:'[name].[chunkhash].js',
         path:path.resolve(__dirname, '../dist'),
         publicPath:'/'
     },
@@ -48,7 +47,6 @@ module.exports = {
             template:'./index.html',
             inject:'body'
         }),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env' :{

@@ -5,4 +5,7 @@ const webpackCommon = require('./webpack.config.common.js')
 
 module.exports = merge(webpackCommon,{
     devtool:'source-map',
+    plugins:[
+        new webpack.HotModuleReplacementPlugin(),
+    ]
 })
