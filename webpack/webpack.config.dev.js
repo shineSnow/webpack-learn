@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     entry:[
         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
+        'webpack/hot/only-dev-server',
         './src/index.js'
     ],
     output:{
