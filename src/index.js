@@ -1,8 +1,8 @@
 import'babel-polyfill'
 
-import {say_hello} from './test.js'
-
+import {say_hello,calc} from './Test'
+import './Test/style.css'
 
 module.hot.accept();
 
-say_hello()
+calc()
