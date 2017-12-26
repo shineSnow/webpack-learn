@@ -9,8 +9,6 @@ module.exports = merge(webpackCommon, {
         publicPath:'./'
     },
     plugins:[
-        new UglifyJSPlugin({
-            sourceMap:true
-        })
+        new UglifyJSPlugin()
     ]
 })

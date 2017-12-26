@@ -17,7 +17,6 @@ module.exports = {
         path:path.resolve(__dirname, '../dist'),
         publicPath:'/'
     },
-    devtool:'source-map',
     resolve: {
         extensions:[".js", ".json", ".jsx", ".css"],
         alias:{}
