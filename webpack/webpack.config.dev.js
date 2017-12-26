@@ -1,13 +1,18 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry:'./src/index.js',
-    devtool:'#source-map',
+    entry:{
+        index:['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true','./src/index.js']
+    },
     output:{
         filename:'bundle.js',
-        path:path.resolve(__dirname, 'dist')
+        path:path.resolve(__dirname, 'dist'),
+        publicPath:'/'
     },
+    devtool:'#source-map',
     module:{
         rules:[
             {
@@ -31,8 +36,13 @@ module.exports = {
     },
     plugins:[
         new HtmlWebpackPlugin({
-            title:'webpack-learn',
-            template:'./index.html'
-        })
+            title:'WEBPACK',
+            template:'./index.html',
+            inject:'body'
+        }),
+        new CleanWebpackPlugin(['dist']),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+
     ]
 }
