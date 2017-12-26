@@ -12,7 +12,6 @@ module.exports = {
         vendor:['moment']
     },
     output:{
-        filename:'[name].[chunkhash].js',
         path:path.resolve(__dirname, '../dist'),
         publicPath:'/'
     },

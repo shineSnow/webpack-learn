@@ -6,6 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = merge(webpackCommon, {
     output:{
+        filename: "[name].[chunkhash].js",
         publicPath:'./'
     },
     plugins:[
