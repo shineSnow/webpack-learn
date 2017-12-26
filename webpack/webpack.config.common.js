@@ -4,13 +4,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry:[
-        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
-        'webpack/hot/only-dev-server',
-        './src/index.js'
-    ],
+    entry:{
+        index:[
+            'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
+            'webpack/hot/only-dev-server',
+            path.resolve(__dirname, '../src/index.js'),
+        ],
+        vendor:['moment']
+    },
     output:{
-        filename:'bundle.js',
+        filename:'[name].bundle.js',
         path:path.resolve(__dirname, '../dist'),
         publicPath:'/'
     },
@@ -52,6 +55,9 @@ module.exports = {
             'process.env' :{
                 'NODE_ENV':JSON.stringify('production')
             }
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            names:['vendor', 'manifest']
         })
 
     ]
