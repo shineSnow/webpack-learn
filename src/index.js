@@ -2,6 +2,6 @@ import'babel-polyfill'
 
 import {say_hello,calc} from './Test'
 
-module.hot.accept();
+if(process.env.NODE_ENV == 'development') module.hot.accept();
 
 calc()
