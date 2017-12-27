@@ -3,14 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry:{
-        index:[
-            'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
-            'webpack/hot/only-dev-server',
-            path.resolve(__dirname, '../src/index.js'),
-        ],
-        vendor:['moment']
-    },
+
     output:{
         path:path.resolve(__dirname, '../dist'),
         publicPath:'/'
@@ -53,7 +46,8 @@ module.exports = {
             }
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            names:['vendor', 'manifest']
+            names:['vendor', 'manifest'],
+            minChunks: Infinity,
         })
 
     ]

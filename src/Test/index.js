@@ -13,6 +13,6 @@ export const say_hello = () => {
 
 export const calc = () => {
         let num = cube(2),
-        html = `2*2*2答案等于${num},the answer is knowned,do you know?`
+        html = `2*2*2答案等于${num} ,对么,yese？`
         document.getElementById('root').innerHTML = html
 }
