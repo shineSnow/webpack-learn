@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     output:{
@@ -18,10 +19,26 @@ module.exports = {
                 use:['babel-loader'],
                 exclude:path.resolve(__dirname,'../node_modules')
             },
+            // {
+            //     test:/\.css$/,
+            //     use:[
+            //         'style-loader',
+            //         {
+            //             loader:'css-loader',
+            //             options:{
+            //                 modules: true,
+            //                 importLoaders: 1,
+            //                 localIdentName: '[name]__[local]___[hash:base64:5]'
+            //             }
+            //          },
+            //         'postcss-loader'
+            //         ]
+            // },
             {
-                test:/\.css$/,
-                use:[
-                    'style-loader',
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                  fallback: "style-loader",
+                  use:[
                     {
                         loader:'css-loader',
                         options:{
@@ -32,6 +49,7 @@ module.exports = {
                      },
                     'postcss-loader'
                     ]
+                })
             },
             {
                 test:/\.(png|jpg|svg|gif)$/,
@@ -62,7 +80,8 @@ module.exports = {
         new webpack.ProvidePlugin({
             $:'jquery',
             jQuery:'jquery'
-        })
+        }),
+        new ExtractTextPlugin("styles.css")
 
     ]
 }
