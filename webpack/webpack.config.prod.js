@@ -7,7 +7,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = merge(webpackCommon, {
     entry:{
         index:path.resolve(__dirname, '../src/index.js'),
-        vendor:['moment']
+        vendor:['moment','jquery']
     },
     output:{
         filename: "[name].[chunkhash].js",

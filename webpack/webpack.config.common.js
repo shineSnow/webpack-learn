@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-
     output:{
         path:path.resolve(__dirname, '../dist'),
         publicPath:'/'
@@ -48,6 +47,10 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             names:['vendor', 'manifest'],
             minChunks: Infinity,
+        }),
+        new webpack.ProvidePlugin({
+            $:'jquery',
+            jQuery:'jquery'
         })
 
     ]
