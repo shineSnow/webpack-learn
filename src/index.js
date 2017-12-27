@@ -7,6 +7,6 @@ if(module.hot) {
     module.hot.accept()
 }
 
-calc()  
+say_hello()  
 
     
