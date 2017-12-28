@@ -9,8 +9,12 @@ module.exports = {
         publicPath:'/'
     },
     resolve: {
-        extensions:[".js", ".json", ".jsx", ".css"],
-        alias:{}
+        extensions:[".js", ".json", ".css"],
+        alias:{
+            ASSETS:path.resolve(__dirname,'../assets'),
+            API:path.resolve(__dirname,"../src/api"),
+            VIWES:path.resolve(__dirname,'../src/views')
+        }
     },
     module:{
         rules:[
@@ -19,45 +23,13 @@ module.exports = {
                 use:['babel-loader'],
                 exclude:path.resolve(__dirname,'../node_modules')
             },
-            // {
-            //     test:/\.css$/,
-            //     use:[
-            //         'style-loader',
-            //         {
-            //             loader:'css-loader',
-            //             options:{
-            //                 modules: true,
-            //                 importLoaders: 1,
-            //                 localIdentName: '[name]__[local]___[hash:base64:5]'
-            //             }
-            //          },
-            //         'postcss-loader'
-            //         ]
-            // },
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                  fallback: "style-loader",
-                  use:[
-                    {
-                        loader:'css-loader',
-                        options:{
-                            modules: true,
-                            importLoaders: 1,
-                            localIdentName: '[name]__[local]___[hash:base64:5]'
-                        }
-                     },
-                    'postcss-loader'
-                    ]
-                })
-            },
             {
                 test:/\.(png|jpg|svg|gif)$/,
-                use:['file-loader']
+                use:['file-loader?limit=10240']
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use:['file-loader']
+                use:['file-loader?limit=10240']
             }
         ]
     },
@@ -81,7 +53,6 @@ module.exports = {
             $:'jquery',
             jQuery:'jquery'
         }),
-        new ExtractTextPlugin("styles.css")
 
     ]
 }

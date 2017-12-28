@@ -1,11 +1,11 @@
-import {cube} from '../math'
+import {cube} from './math'
 import style from './style.css'
-import '../moment'
+import './moment'
 
 export const say_hello = () => {
     let html = `
             <h1 class="${style.title}">这个是标题</h1>
-            <p class="${style.text}">这里是内容</p>
+            <p class="${style.text}">这里是内容是的法定 </p>
     `
     document.getElementById('root').innerHTML = html
     
