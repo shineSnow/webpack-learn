@@ -24,21 +24,6 @@ module.exports = {
                 exclude:path.resolve(__dirname,'../node_modules')
             },
             {
-                test:/\.css$/,
-                use:[
-                    'style-loader',
-                    {
-                        loader:'css-loader',
-                        options:{
-                            modules: true,
-                            importLoaders: 1,
-                            localIdentName: '[name]__[local]___[hash:base64:5]'
-                        }
-                     },
-                    'postcss-loader'
-                    ]
-            },
-            {
                 test:/\.(png|jpg|svg|gif)$/,
                 use:['file-loader?limit=10240']
             },
