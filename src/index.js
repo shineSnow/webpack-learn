@@ -1,13 +1,11 @@
-// import 'babel-polyfill'
 import 'normalize.css'
-
-import Index from './views/Index'
-import {say_hello} from './Test'
+import 'jquery-weui/dist/lib/weui.min.css'
+import 'jquery-weui/dist/css/jquery-weui.min.css'
+import weui from 'jquery-weui/dist/js/jquery-weui.min'
+import Body from './views/Body'
 
 if(module.hot) {
-    // if(process.env.NODE_ENV == 'development') module.hot.accept();
     module.hot.accept()
 }
 
-
-say_hello()
+Body()

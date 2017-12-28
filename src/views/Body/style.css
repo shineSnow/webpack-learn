@@ -1,0 +1,35 @@
+body{
+    padding-bottom: 90px;
+}
+.wrapper{
+    font-size:26px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header{
+    flex: 1;
+    position: sticky;
+    top: 0;
+}
+
+.content_a{
+    flex: 1;
+    background:lightyellow;
+    font-size: 12px;
+}
+.content_a h3 {
+    font-size: 24px;
+}
+.content_b{
+    flex: 1;
+    font-size: 12px;
+
+}
+.footer{
+    flex: 1;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
