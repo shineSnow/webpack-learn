@@ -1,11 +1,6 @@
 export default () =>{
+    fetchApi()
     return (`
-            <i class="weui-icon-success weui-icon_msg"></i>
-            <i class="weui-icon-info weui-icon_msg"></i>
-            <i class="weui-icon-warn weui-icon_msg-primary"></i>
-            <i class="weui-icon-warn weui-icon_msg"></i>
-            <i class="weui-icon-waiting weui-icon_msg"></i>
-            
             <i class="weui-icon-success"></i>
             <i class="weui-icon-success-no-circle"></i>
             <i class="weui-icon-circle"></i>
@@ -15,4 +10,12 @@ export default () =>{
             <i class="weui-icon-cancel"></i>
             <i class="weui-icon-search"></i>
     `)
+}
+
+const fetchApi = ()=>{
+   fetch('/activity/get/recommend_goods_list/33021/15064913171430.html').then(res=>{
+       return res.json();
+   }).then(res=>{
+       console.log(res)
+   })
 }

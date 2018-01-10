@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "cssnano": "^3.10.0",
+    "http-proxy-middleware": "^0.17.4",
     "jquery": "^3.2.1",
     "jquery-weui": "^1.2.0",
     "moment": "^2.20.1",
