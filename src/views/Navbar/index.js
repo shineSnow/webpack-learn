@@ -1,5 +1,8 @@
+import style from './style.css'
 
 export default () =>{
-    let html =`navbar`;
+    let html =`
+                <div class="${style.navBar}"> navBar</div>
+    `;
     return html
 }

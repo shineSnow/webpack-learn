@@ -53,6 +53,8 @@
     "normalize.css": "^7.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.9",
+    "postcss-plugin-px2rem": "^0.7.0",
+    "postcss-px2rem": "^0.3.0",
     "uglifyjs-webpack-plugin": "^1.1.4"
   }
 }
