@@ -36,7 +36,7 @@ app.use(webpackHotMiddleware(compiler))
 app.use('/', proxy(proxyOption));
 
 // Serve the files on port 3000.
-app.listen(3000, function err() {
+app.listen(3000, function err(err) {
   if (err) {
     return console.error(err);
   }
