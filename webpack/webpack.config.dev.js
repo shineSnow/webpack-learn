@@ -20,6 +20,10 @@ module.exports = merge(webpackCommon,{
         rules:[
             {
                 test:/\.css$/,
+                exclude:[
+                    path.join(__dirname,'../node_modules'),
+                    path.join(__dirname,'../assets/font'),
+                ],
                 use:[
                     'style-loader',
                     {
@@ -32,6 +36,14 @@ module.exports = merge(webpackCommon,{
                      },
                     'postcss-loader'
                     ]
+            },
+            {
+                test: /\.css$/,
+                include:[
+                    path.join(__dirname,'../node_modules'),
+                    path.join(__dirname,'../assets/font'),
+                ],
+                use:['style-loader','css-loader','postcss-loader']
             },
         ]
     },

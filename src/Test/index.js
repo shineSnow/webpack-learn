@@ -3,10 +3,10 @@ import style from './style.css'
 import './moment'
 
 export const say_hello = () => {
-    let html = `
-            <h1 class="${style.title}">这个是标题</h1>
-            <p class="${style.text}">这里是内容是的法定 </p>
-    `
+    let html = `<div>
+                <p>我是内容</p>
+                <p>我是内容</p>
+               </div>`
     document.getElementById('root').innerHTML = html
     
 }
